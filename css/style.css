@@ -1,0 +1,64 @@
+/* Castle International - Main Stylesheet
+   Additional styles beyond inline Tailwind utilities */
+
+/* Custom animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Apply animations to elements */
+.animate-fade-in-up {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+.animate-slide-in {
+    animation: slideIn 0.6s ease-out;
+}
+
+/* Custom scrollbar styling */
+::-webkit-scrollbar-thumb:active {
+    background: #6b6560;
+}
+
+/* Print styles */
+@media print {
+    nav, footer, .chatbot-window, button[onclick="toggleChat()"] {
+        display: none !important;
+    }
+}
+
+/* Accessibility improvements */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* Future sections placeholder styles */
+.section-placeholder {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #F5F3ED 0%, #EAE6DF 100%);
+}
